@@ -1,0 +1,31 @@
+1) Income statement, cashflow and balance sheet have been fetched using yahoo finance, module yahoo_fin.stock has been used.
+
+2) 2 datasets equity_nse and equity_bse are used to fetch the company names for which accruals are to be calculated.
+
+3)Several dataframes are made individually for nse and bse to make computation easy and later they are merged to 1 dataframe.
+
+4) dataframes and their meanings:
+
+NSE dataframes:
+
+netIncomeFromContinuingOps: Has the net income from continuing operations, it is for nse. 
+netIncome: This is the net profit, it is for nse.
+totalCashFromOperatingActivities: total cash from operating activities, it is for nse.
+average_assets: for nse.
+
+BSE dataframes:
+
+bse_netIncomeFromContinuingOps: Has the net income from continuing operations, it is for nse. 
+bse_netIncome: This is the net profit, it is for nse.
+bse_totalCashFromOperatingActivities: total cash from operating activities, it is for nse.
+bse_average_assets: it is for bse.
+
+5) save dataframes to csv. (Optional, I did it to so i don't have to fetch data again )
+
+6) Once all the dataframes are created, i read them to original dataframes to check they are in correct format. Clean the data, if necessary.(optional)
+
+7)Now calculate accruals for nse and for bse seperately using the dataframes we made. Once done merge them and save the NaN rows to another dataframe which has all the NaN values, Company_with_NaN_data_Accruals contains that. Drop the NaN rows from original Accruals dataframe now.
+
+Accruals= nse_Accruals+ bse_Accruals
+
+8) Similarly, calculate Earnings, Accrual component and cashflow component.
